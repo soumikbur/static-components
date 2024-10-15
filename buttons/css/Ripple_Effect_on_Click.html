@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ripple Effect Button</title>
+    <style>
+        .ripple-button {
+            font-size: 16px;
+            padding: 10px 20px;
+            background-color: #009688;
+            color: white;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+
+        .ripple-button::after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            transition: all 0.6s;
+            border-radius: 50%;
+        }
+
+        .ripple-button:active::after {
+            width: 0;
+            height: 0;
+            opacity: 1;
+            transition: 0s;
+        }
+    </style>
+</head>
+<body>
+    <button class="ripple-button">Ripple Button</button>
+</body>
+</html>
